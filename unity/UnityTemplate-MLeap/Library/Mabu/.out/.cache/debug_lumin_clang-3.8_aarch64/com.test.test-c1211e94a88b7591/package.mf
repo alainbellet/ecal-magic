@@ -1,0 +1,282 @@
+{
+ "entries": [
+  {
+   "compression": 8,
+   "hash": "847a3dce9616099316bc4bc539555d641582a580",
+   "pkgpath": "Data/Managed/Metadata/global-metadata.dat",
+   "size": 3747188,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/Metadata/global-metadata.dat"
+  },
+  {
+   "compression": 8,
+   "hash": "a662d6a40f83732dc959ff911a4b37cbddb269d5",
+   "pkgpath": "bin/libil2cpp.so",
+   "size": 60973528,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Native/libil2cpp.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/Magic_leap_privatekey/test-alain.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "a3d1c3bb356385e85efd7e2fd00f1a871e7c88e0",
+   "xfrm_path": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Library/Mabu/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-c1211e94a88b7591/libil2cpp.so-9c22ce2340dfb319",
+   "xfrm_size": 60974286
+  },
+  {
+   "compression": 8,
+   "hash": "110ace6358eb0d6f1c1ba8568e49153ae38e8a4e",
+   "pkgpath": "bin/AudioPluginMSASpatializer.so",
+   "size": 343888,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Plugins/AudioPluginMSASpatializer.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/Magic_leap_privatekey/test-alain.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "214f4dbda5c3735da16ea80f1c78f3481a0ac83c",
+   "xfrm_path": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Library/Mabu/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-c1211e94a88b7591/AudioPluginMSASpatializer.so-1cbf777d20fca6c8",
+   "xfrm_size": 344646
+  },
+  {
+   "compression": 8,
+   "hash": "f8a0cdaa91a20ecb77151d702d7702790e676b60",
+   "pkgpath": "bin/UnityMagicLeap.so",
+   "size": 3189800,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Plugins/UnityMagicLeap.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/Magic_leap_privatekey/test-alain.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "bd0b13f9b3e916637ba572b126cbad532d691136",
+   "xfrm_path": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Library/Mabu/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-c1211e94a88b7591/UnityMagicLeap.so-1cbf777d20fca6c8",
+   "xfrm_size": 3190558
+  },
+  {
+   "compression": 8,
+   "hash": "ca1eb2c07d4e8dc02d25cd8c40ba01f5e01bb98f",
+   "pkgpath": "bin/libml_bluetoothle_plugin.so",
+   "size": 14048,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Plugins/libml_bluetoothle_plugin.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/Magic_leap_privatekey/test-alain.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "c95545a457e9a11bf553afe054fff651d8875778",
+   "xfrm_path": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Library/Mabu/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-c1211e94a88b7591/libml_bluetoothle_plugin.so-1cbf777d20fca6c8",
+   "xfrm_size": 14806
+  },
+  {
+   "compression": 8,
+   "hash": "daabc7cd6f539f944620e3a7811f97b922d85395",
+   "pkgpath": "bin/libml_camera_plugin.so",
+   "size": 14184,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Plugins/libml_camera_plugin.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/Magic_leap_privatekey/test-alain.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "764344aaeefa365e0ca14551433651f455102365",
+   "xfrm_path": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Library/Mabu/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-c1211e94a88b7591/libml_camera_plugin.so-1cbf777d20fca6c8",
+   "xfrm_size": 14942
+  },
+  {
+   "compression": 8,
+   "hash": "260b4311c3fbf67436300d06210d254f5e02acad",
+   "pkgpath": "bin/libml_mediaplayer_plugin.so",
+   "size": 67616,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Plugins/libml_mediaplayer_plugin.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/Magic_leap_privatekey/test-alain.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "413cc1e8f446f119336765a52a33b1b24933ea1d",
+   "xfrm_path": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Library/Mabu/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-c1211e94a88b7591/libml_mediaplayer_plugin.so-1cbf777d20fca6c8",
+   "xfrm_size": 68374
+  },
+  {
+   "compression": 8,
+   "hash": "e6124da6073b916e29e013cf3ae3f58a4c5fdb0e",
+   "pkgpath": "Data/Resources/mscorlib.dll-resources.dat",
+   "size": 337563,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Resources/mscorlib.dll-resources.dat"
+  },
+  {
+   "compression": 8,
+   "hash": "17f88e43854698dc13b61ac96d1759388a6cf191",
+   "pkgpath": "Data/Resources/unity default resources",
+   "size": 3693460,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Resources/unity default resources"
+  },
+  {
+   "compression": 8,
+   "hash": "426e502704682df79c3fc96b177085f6b31bc4a6",
+   "pkgpath": "Data/Resources/unity_builtin_extra",
+   "size": 951700,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Resources/unity_builtin_extra"
+  },
+  {
+   "compression": 8,
+   "hash": "778891100a8030ad6096db64784c6e5d67c28378",
+   "pkgpath": "Data/UnitySubsystems/UnityMagicLeap/UnitySubsystemsManifest.json",
+   "size": 417,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/UnitySubsystems/UnityMagicLeap/UnitySubsystemsManifest.json"
+  },
+  {
+   "compression": 8,
+   "hash": "f8f0d77de31a0578d5c62d15cf412bb90554b44e",
+   "pkgpath": "Data/boot.config",
+   "size": 243,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/boot.config"
+  },
+  {
+   "compression": 8,
+   "hash": "720ab6c6e84f84345bd73ed896d3dc1b8023193e",
+   "pkgpath": "Data/globalgamemanagers",
+   "size": 65804,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/globalgamemanagers"
+  },
+  {
+   "compression": 8,
+   "hash": "da7a287c814e5390be09b8295db49ab79bae015a",
+   "pkgpath": "Data/globalgamemanagers.assets",
+   "size": 101556,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/globalgamemanagers.assets"
+  },
+  {
+   "compression": 8,
+   "hash": "0d138e05c46d222a5f1d91c800c41d65500ebeb2",
+   "pkgpath": "Data/level0",
+   "size": 108696,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/level0"
+  },
+  {
+   "compression": 8,
+   "hash": "91ac6202f99f7d573de97b8c626c39fee0c0252d",
+   "pkgpath": "Data/level0.resS",
+   "size": 131232,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/level0.resS"
+  },
+  {
+   "compression": 8,
+   "hash": "dc5785d6010ad9e4ceafe95449e7baf5970268d8",
+   "pkgpath": "Data/resources.assets",
+   "size": 34808,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/resources.assets"
+  },
+  {
+   "compression": 8,
+   "hash": "787a8e7f3e0aa1d3f102e19bdbb76b0a488d036e",
+   "pkgpath": "Data/sharedassets0.assets",
+   "size": 7245076,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/sharedassets0.assets"
+  },
+  {
+   "compression": 8,
+   "hash": "7fe5c065545e40c5439cdf498a938af0e0778950",
+   "pkgpath": "Data/sharedassets0.assets.resS",
+   "size": 2471304,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/sharedassets0.assets.resS"
+  },
+  {
+   "compression": 8,
+   "hash": "0fd50722c929edc2d7c58d86cc579730c2018cf8",
+   "pkgpath": "bin/Player.elf",
+   "size": 52755696,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Player.elf",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/Magic_leap_privatekey/test-alain.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "a62602765b1e494e82ac4a3666780d9b5f122067",
+   "xfrm_path": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Library/Mabu/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-c1211e94a88b7591/Player.elf-f8b8d8fb7a1b563f",
+   "xfrm_size": 52756454
+  },
+  {
+   "compression": 8,
+   "hash": "74cc3ce2ec9be791cf9657e2b877d2f33be575f9",
+   "pkgpath": "manifest.xml",
+   "size": 2323,
+   "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/manifest.xml",
+   "xfrm_flags": {
+    "manifest": {
+     "cert_hash": "eef3c82ae119b56f832f985bf5e78d4cd08de24d",
+     "developer_id": "48441e36-b05f-451e-b823-7a3af7f3eb8b"
+    }
+   },
+   "xfrm_hash": "7dc9297805b5d9e4f1d28b2b90f90aa60236e2d1",
+   "xfrm_path": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Library/Mabu/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-c1211e94a88b7591/manifest.xml-f8b8d8fb7a1b563f",
+   "xfrm_size": 936
+  },
+  {
+   "compression": 8,
+   "hash": "5925de9f4d7b83c65d1fd7b25ced5f0bf8c27e73",
+   "pkgpath": "bin/libc++_shared.so",
+   "size": 976832,
+   "src": "/Users/abookm1/MagicLeap/mlsdk/v0.26.0/lumin/stl/libc++/lib/libc++_shared.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/Magic_leap_privatekey/test-alain.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "360c0782c421c606491508351a1b6175b7635fab",
+   "xfrm_path": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Library/Mabu/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-c1211e94a88b7591/libc++_shared.so-59ecbb5fd367bcfe",
+   "xfrm_size": 977590
+  }
+ ],
+ "pkgflags": {
+  "signed": {
+   "cert": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/Magic_leap_privatekey/test-alain.cert"
+  },
+  "taildata": {
+   "debuggable": true,
+   "devcert": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/Magic_leap_privatekey/test-alain.cert",
+   "sbox": "USER",
+   "version": 3
+  }
+ }
+}

@@ -1,0 +1,1344 @@
+ScriptsOnlyBuild:
+  usedScripts:
+    Assembly-CSharp.dll:
+    - MagicLeap.ControllerStatus
+    - MagicLeap.ControllerTransform
+    - MagicLeap.ControllerVisualizer
+    - MagicLeap.Core.MLImageTrackerBehavior
+    - MagicLeap.DeepSeaExplorerLauncher
+    - MagicLeap.DeepSpaceExplorerController
+    - MagicLeap.DeepSpaceExplorerLauncher
+    - MagicLeap.DestroyAfterTime
+    - MagicLeap.ImageTrackerExample
+    - MagicLeap.ImageTrackerVisualizer
+    - MagicLeap.LocalizeManager
+    - MagicLeap.PlaceFromCamera
+    - MagicLeap.UIButton
+    - MagicLeap.UIButtonGroup
+    - MagicLeap.UIInputVisualizer
+    - MagicLeap.UIScrollView
+    - MagicLeap.UIToggleButton
+    - MagicLeap.UserInterface
+    - UnityEngine.XR.MagicLeap.MLControllerConnectionHandlerBehavior
+    - UnityEngine.XR.MagicLeap.MLInputModuleBehavior
+    - UnityEngine.XR.MagicLeap.MLInputRaycasterBehavior
+    - UnityEngine.XR.MagicLeap.MLSceneOptimizerBehavior
+    - UnityEngine.XR.MagicLeap.PrivilegeDeniedError
+    Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.XR.Management.Editor.dll:
+    - UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget
+    Unity.XR.Management.dll:
+    - UnityEngine.XR.Management.XRGeneralSettings
+    - UnityEngine.XR.Management.XRManagerSettings
+    UnityEditor.TestRunner.dll:
+    - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
+    - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.SpatialTracking.dll:
+    - UnityEngine.SpatialTracking.TrackedPoseDriver
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.EventTrigger
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.HorizontalLayoutGroup
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Shadow
+    - UnityEngine.UI.Text
+    - UnityEngine.UI.VerticalLayoutGroup
+    UnityEngine.XR.MagicLeap.dll:
+    - UnityEngine.XR.MagicLeap.MagicLeapLoader
+    - UnityEngine.XR.MagicLeap.MagicLeapSettings
+    - UnityEngine.XR.MagicLeap.Rendering.MagicLeapCamera
+  sceneClasses:
+    Assets/MagicLeap/Examples/Intermediate/Scenes/ImageTracker.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 75
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 96
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 16586}
+    - Class: 114
+      Script: {instanceID: 16592}
+    - Class: 114
+      Script: {instanceID: 16850}
+    - Class: 114
+      Script: {instanceID: 16880}
+    - Class: 114
+      Script: {instanceID: 16886}
+    - Class: 114
+      Script: {instanceID: 16950}
+    - Class: 114
+      Script: {instanceID: 17048}
+    - Class: 114
+      Script: {instanceID: 17136}
+    - Class: 114
+      Script: {instanceID: 17160}
+    - Class: 114
+      Script: {instanceID: 17224}
+    - Class: 114
+      Script: {instanceID: 17400}
+    - Class: 114
+      Script: {instanceID: 17490}
+    - Class: 114
+      Script: {instanceID: 17518}
+    - Class: 114
+      Script: {instanceID: 17524}
+    - Class: 114
+      Script: {instanceID: 17654}
+    - Class: 114
+      Script: {instanceID: 17660}
+    - Class: 114
+      Script: {instanceID: 17684}
+    - Class: 114
+      Script: {instanceID: 17868}
+    - Class: 114
+      Script: {instanceID: 18030}
+    - Class: 114
+      Script: {instanceID: 18104}
+    - Class: 114
+      Script: {instanceID: 18262}
+    - Class: 114
+      Script: {instanceID: 18290}
+    - Class: 114
+      Script: {instanceID: 18342}
+    - Class: 114
+      Script: {instanceID: 18468}
+    - Class: 114
+      Script: {instanceID: 18534}
+    - Class: 114
+      Script: {instanceID: 18574}
+    - Class: 114
+      Script: {instanceID: 18648}
+    - Class: 114
+      Script: {instanceID: 18882}
+    - Class: 114
+      Script: {instanceID: 19072}
+    - Class: 114
+      Script: {instanceID: 19094}
+    - Class: 114
+      Script: {instanceID: 19160}
+    - Class: 114
+      Script: {instanceID: 19200}
+    - Class: 114
+      Script: {instanceID: 19352}
+    - Class: 114
+      Script: {instanceID: 19520}
+    - Class: 114
+      Script: {instanceID: 19556}
+    - Class: 114
+      Script: {instanceID: 19900}
+    - Class: 114
+      Script: {instanceID: 19954}
+    - Class: 114
+      Script: {instanceID: 20022}
+    - Class: 114
+      Script: {instanceID: 20032}
+    - Class: 114
+      Script: {instanceID: 20154}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 120
+      Script: {instanceID: 0}
+    - Class: 124
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+  scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 4bc4346a71a8df53a6b106f68ef3a190
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: d9e963ad9ad2bd2a075ddb31551b8da4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MLSceneOptimizerBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 514f765ac225739168d24093d5fcd2fd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: LightTrackingExample
+  - hash:
+      serializedVersion: 2
+      Hash: c42672c997f8be6b1aa86a927ebea785
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_SelectionCaret
+  - hash:
+      serializedVersion: 2
+      Hash: 87ff43d2baf3385cba327d8f803a4ebb
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: AudioPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: b4fc42b020df4b67385e61ff21d513cc
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 6652d364f13f12c26413e5a1568e191e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap.Core
+    className: MLMovementColliderBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 5e8469af7ff1c9a7cb81433bbfef1d58
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: LocationExample
+  - hash:
+      serializedVersion: 2
+      Hash: e7a73f5f78ba6445195ec23b74a1ce2d
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_ScrollbarEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
+    className: PlayerQuitHandler
+  - hash:
+      serializedVersion: 2
+      Hash: eb9e20e509c41cb36f9b34529b96af2f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: FaceTargetPosition
+  - hash:
+      serializedVersion: 2
+      Hash: 04e4a8b0447477cc4e933d9e5311188f
+    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
+    namespaceName: UnityEngine.XR.LegacyInputHelpers
+    className: ArmModel
+  - hash:
+      serializedVersion: 2
+      Hash: c3d3430df9e3ea95e3e3d587961390fb
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: GroupTrack
+  - hash:
+      serializedVersion: 2
+      Hash: a5781dc71a671b1ad2b38de19f24b71f
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: ActivationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: c87bfe73eb7e91125825297cd7cb3df8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: DeepSpaceExplorerController
+  - hash:
+      serializedVersion: 2
+      Hash: f6d37ba74498939ff00a3c244066f951
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MLRaycastVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: a3e2e4e3704ffeba54b5192d840fb824
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: PersistentBall
+  - hash:
+      serializedVersion: 2
+      Hash: aeb62f729c52c814dec86c47dcac1471
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Text
+  - hash:
+      serializedVersion: 2
+      Hash: 499fd23433e68e265d153aa6b95d0047
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Scrollbar
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: PositionAsUV1
+  - hash:
+      serializedVersion: 2
+      Hash: abf1930d8126d0b2e00e9449129a0190
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 98aa0a0c8ff2910eb12af89c7e0eb661
+    assemblyName: Unity.XR.Management.dll
+    namespaceName: UnityEngine.XR.Management
+    className: XRGeneralSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 14687128fc7223cf743279073a1e2c14
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ControllerStatsText
+  - hash:
+      serializedVersion: 2
+      Hash: e1a6e1996acf182aaed1ec7f22b3191c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap.Core
+    className: MLPlanesBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 89f9a1b4c64db9559e39f4a2e3bfaadd
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
+    className: TestResultRendererCallback
+  - hash:
+      serializedVersion: 2
+      Hash: 234d407605354852c48e57df17c9a1c6
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 6ea66aafcaead7e84edaff2d5a08c04a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap.Core
+    className: MLImageTrackerBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 2d2e51de11c102b393605c801ebe6adb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: VideoCaptureVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 7ab0e790220bdca831fdd886b339039d
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: GridLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: fa672cb42adc4ddd98ccaee294dda410
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: RaycastExample
+  - hash:
+      serializedVersion: 2
+      Hash: 14687128fc7223cf743279073a1e2c14
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ControllerStatusText
+  - hash:
+      serializedVersion: 2
+      Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: ContentSizeFitter
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: SignalAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 63911722392c3b282ebec1129e41411d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MLHandMeshingBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 0dbc3be398b4869a5c8d0d8481ee402c
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: LayoutElement
+  - hash:
+      serializedVersion: 2
+      Hash: 18c222bef9ae745ce69ddde9b74337ca
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ContentDragController
+  - hash:
+      serializedVersion: 2
+      Hash: 793516142626b26805cd0efe03aca8e4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: PlaceFromCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 78c2c1d9ed12ec4c7b3741b97df88219
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ContactsExample
+  - hash:
+      serializedVersion: 2
+      Hash: feb1ca092f1729a95e366171e324db65
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: PCFExample
+  - hash:
+      serializedVersion: 2
+      Hash: bd3cf68c8964d3c66d1c43f4f98508c9
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: AnimationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 56afa8d3f1804a2e220d996d914ddbc0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ContactsTextFieldVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: cf9f5cf2c3145a37ac07f00e50e460f9
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: AspectRatioFitter
+  - hash:
+      serializedVersion: 2
+      Hash: ef5c43f921427d03730f6ea4c848f07d
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: RectMask2D
+  - hash:
+      serializedVersion: 2
+      Hash: 2151de9fb71afea16ec023658aae7e04
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MusicServiceExample
+  - hash:
+      serializedVersion: 2
+      Hash: 1103fb0758976355cdf9b7d5ce9cb7e0
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_SubMeshUI
+  - hash:
+      serializedVersion: 2
+      Hash: 52bcb9c2a78bdd8d98a59e915c346e75
+    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
+    namespaceName: UnityEngine.XR.LegacyInputHelpers
+    className: TransitionArmModel
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: UIButtonGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 5ab533713adae59372fb3e10a585c186
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 7fc9e11cc6d2944254bf4047c94916cc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MLPrivilegeRequesterBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 783a22527d17183357ec2d7bdefe2a4b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ContactPageVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 9999886d26a4dcaa3ee65b8109f38d4c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: TransformFollower
+  - hash:
+      serializedVersion: 2
+      Hash: aba7b2852ef61d175dd9602e7723d5e5
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: b3c4d6d2ec3bf1231fdecd4daaab21da
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MediaPlayerToggle
+  - hash:
+      serializedVersion: 2
+      Hash: d251bf88db6c95a6b1aa0b69298da9ef
+    assemblyName: UnityEngine.SpatialTracking.dll
+    namespaceName: UnityEngine.SpatialTracking
+    className: TrackedPoseDriver
+  - hash:
+      serializedVersion: 2
+      Hash: caa533b001ae39b864ba8425019e2268
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: a7c91ead796087612ab9b5731410c7c5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: HandTrackingExample
+  - hash:
+      serializedVersion: 2
+      Hash: 9399b2cf89cb1ba2f50b83474182dad2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: WorldScaleExample
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.XR.MagicLeap.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MagicLeapInput
+  - hash:
+      serializedVersion: 2
+      Hash: cc4274b586df3c02688bac01b88bd16c
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: EventSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 0fb27be807aa299702f28ad0bcad1f46
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: ControlPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: e155fc388d97ed6f74f18e3a346e1d5d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: LocalizeManager
+  - hash:
+      serializedVersion: 2
+      Hash: 25ec9314fcfe6a30cf53eb98bc10a4e2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MLHeadposeCanvasBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 3443de056ecddd5d4521f7470540caf6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap.Core
+    className: MLWorldScaleBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ControllerStatus
+  - hash:
+      serializedVersion: 2
+      Hash: da86fd4899aae3e84c87bcb8ad24a759
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MobileAppControllerVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: fd68d84f33fad85aac38f2739c0ee270
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_SpriteAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 1ae487527e556f510d11152be2acc804
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap.Core
+    className: MLMovementSettingsManagerBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: c3d3430df9e3ea95e3e3d587961390fb
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: ControlTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 8dc90e648ac06f43bdd31ac9fa8f4579
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Selectable
+  - hash:
+      serializedVersion: 2
+      Hash: f94949dacf4cacfa4f3a2e983f137942
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MLInputRaycasterBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: d21ecd36cd042c698c6013705e7e6df8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ControllerStatusIndicator
+  - hash:
+      serializedVersion: 2
+      Hash: 3ef62266162c7e22577523240521a1c9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: PCFVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 9b0f995129a0a61fe830065203c17db2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MLMusicServiceBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: a4b49ebd21ee09aede96a6269a9a0316
+    assemblyName: UnityEngine.XR.MagicLeap.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MLSpatialMapper
+  - hash:
+      serializedVersion: 2
+      Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 758dd06addb323cfbb1833afd369e151
+    assemblyName: UnityEngine.XR.MagicLeap.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MagicLeapSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 275eb9b2dda334067940d107632455c1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: PathAroundObject
+  - hash:
+      serializedVersion: 2
+      Hash: a0f1ee63681d861ad496c8c46b497b4e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: VirtualKeyboard
+  - hash:
+      serializedVersion: 2
+      Hash: c3d3430df9e3ea95e3e3d587961390fb
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 36f00e01121bcb96ac8a5a22dca6a84e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: DeepSpaceExplorerLauncher
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_SpriteAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 738ee4bb155b73a30a77c919c0fdc1e5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MediaPlayer51SurroundEnabler
+  - hash:
+      serializedVersion: 2
+      Hash: d49d0054e89ec414c1be8807b5cb4572
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: DestroyAfterTime
+  - hash:
+      serializedVersion: 2
+      Hash: 22c14ebe1905062a8b7a1c4bf27e5b90
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MLInputModuleBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
+    className: RemoteTestResultSender
+  - hash:
+      serializedVersion: 2
+      Hash: 3e9715ca1b670fa54d374b2d0c750529
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ImageTrackerVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: d251bf88db6c95a6b1aa0b69298da9ef
+    assemblyName: LuminUnity.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MLDevice
+  - hash:
+      serializedVersion: 2
+      Hash: 4fd8bf02e3089425d3502e26c44ba31a
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 7e688142093d4676b126043b32c5fc76
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: SpriteSequenceAnimation
+  - hash:
+      serializedVersion: 2
+      Hash: 5f1752ed2092162f016c19510c28a8b9
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: d4262f34a88917fed37758702765a7af
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ImageTrackerExample
+  - hash:
+      serializedVersion: 2
+      Hash: 940e9d1e653b56909ba624a694765cc6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: KeyPoseVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: f84d945e5e1ca985698660fc26e9657f
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 5eae88ab56023226660e36068dcb0cbd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MediaPlayerExampleCycler
+  - hash:
+      serializedVersion: 2
+      Hash: 216a2a0429f8570a3e4391a3aa9d49f0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: UIToggleButton
+  - hash:
+      serializedVersion: 2
+      Hash: b99f4b2aee194131a23ec4c92605dfc3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ContactsVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 97d2557278590beea2e2933c02982e07
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ControllerVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: d66935c95f3cc53ade441a15057ccfa7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: PCFVisual
+  - hash:
+      serializedVersion: 2
+      Hash: 597b93d918ec3624d540d62dd24648c5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap.Core
+    className: MLHandTrackingBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 5ad4aa237d47ac2bab17bacb672edf7a
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: a1d39b7569c5b2d76b65212e17518b0e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: VirtualKeyboardExample
+  - hash:
+      serializedVersion: 2
+      Hash: aaab4f29fabad02342b857e5a6db71be
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: PlanesExample
+  - hash:
+      serializedVersion: 2
+      Hash: d251bf88db6c95a6b1aa0b69298da9ef
+    assemblyName: LuminUnity.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MagicLeapDevice
+  - hash:
+      serializedVersion: 2
+      Hash: ed32868b7e91bdde2e89ac2645d99ca9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: PlanesVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 3fb4eb2c98cdddb9559390f14e38a983
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: VideoCaptureExample
+  - hash:
+      serializedVersion: 2
+      Hash: f64fd37da5cb89243ec68b5026d70bb8
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 023140555d823c63f9fb09a23b2f4a55
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: Ruler
+  - hash:
+      serializedVersion: 2
+      Hash: c9a8b80298a116835b51ba1cf9284367
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: SignalReceiver
+  - hash:
+      serializedVersion: 2
+      Hash: 8c3fac3c827d45a4e5901499bfe79ff1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: RawVideoCaptureVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 5ad4aa237d47ac2bab17bacb672edf7a
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: HorizontalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 300fd99066f8c288e85f5e81ce65fe34
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 87ad3705a58f19c47136728d4a6e9c47
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_Settings
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: ActivationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 18c222bef9ae745ce69ddde9b74337ca
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: Physics2DRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 991e49dd5c39769aa852f5ad896bcb95
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: HandVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap.Core
+    className: MLContactsBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: c1933cc0a2f4ff6eb13333347497beb3
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: TimelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 436d05b58580d6b626413b8e9176831b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MusicServiceVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 45dad09eb1dd824a11d97ea11d819a07
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ImageCaptureExample
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ControllerTransform
+  - hash:
+      serializedVersion: 2
+      Hash: 220aad3ab64f4d4603466112e0135e4b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MLControllerConnectionHandlerBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: ba371c1d100143df058d9520fb3f3a4c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MobileAppExample
+  - hash:
+      serializedVersion: 2
+      Hash: 83416c2f4423f78ae21db484905b553a
+    assemblyName: UnityEngine.XR.MagicLeap.dll
+    namespaceName: UnityEngine.XR.MagicLeap.Rendering
+    className: MagicLeapCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 24c74cc0d527a06113f2b967042769f0
+    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
+    namespaceName: UnityEditor.XR.LegacyInputHelpers
+    className: CameraOffset
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: UIScrollView
+  - hash:
+      serializedVersion: 2
+      Hash: 522398438b193a740ce5018640f3264d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MediaPlayerSlider
+  - hash:
+      serializedVersion: 2
+      Hash: 6939772cb3ce775a8e8d99f332534491
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 789a9d4116efe753ead219d8c8ecda2a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: WacomTabletFeedbackExample
+  - hash:
+      serializedVersion: 2
+      Hash: 9e9303929c7169869e97351d8946a3e2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ControlExample
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: LuminUnity.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MLMediaPlayer
+  - hash:
+      serializedVersion: 2
+      Hash: f336e086360abe49a3323e5f1583c35a
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: AudioTrack
+  - hash:
+      serializedVersion: 2
+      Hash: ae83e830e7a90c0aff918c4c2e520825
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: GraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 8e6ceabfd38a184413d69b7db56c89cc
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools
+    className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: f8dcb1d04db1d452c5393c7eead2851c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ContactsListPageVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 0316672cbf52e5a979be7f01e0768942
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: WacomTabletVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: b00a152606798614d53d6494d3105b79
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MeshingExample
+  - hash:
+      serializedVersion: 2
+      Hash: a7604fb4c0b7b2ef66369e792bc1a661
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap.Core
+    className: MLFoundObjectsBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 4521d6083a46c3b0a08d84d7bf667a8b
+    assemblyName: MSA.Runtime.dll
+    namespaceName: MSA
+    className: MSAListener
+  - hash:
+      serializedVersion: 2
+      Hash: 41d89aa4d10fe8a8266e982ca2c20c40
+    assemblyName: MSA.Runtime.dll
+    namespaceName: MSA
+    className: MSASource
+  - hash:
+      serializedVersion: 2
+      Hash: 6e55d8f5f9e03f5e4dd74d1689caa770
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ContactsButtonVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 8a2810d456986d72102a2ee15a6208b7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: PrivilegeDeniedError
+  - hash:
+      serializedVersion: 2
+      Hash: c8102e51aaf4151f5a35ab37091b5713
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: FaceCamera
+  - hash:
+      serializedVersion: 2
+      Hash: c608a3fe7d7d36c38bab59d62255b4da
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: UIButton
+  - hash:
+      serializedVersion: 2
+      Hash: 893dbdbfe611d62e230a686ea89f1efd
+    assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
+    namespaceName: UnityEngine.XR.LegacyInputHelpers
+    className: SwingArmModel
+  - hash:
+      serializedVersion: 2
+      Hash: c3d3430df9e3ea95e3e3d587961390fb
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: MarkerTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: LuminUnity.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MLMediaPlayer
+  - hash:
+      serializedVersion: 2
+      Hash: a298ff9ff3b3dae397799678c2360f43
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap.Core
+    className: MLRaycastBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 800c50acba124432abb4cf0d47202e06
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 8d09957a334aba0bfedac9400f6deac9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: AudioCaptureExample
+  - hash:
+      serializedVersion: 2
+      Hash: 43440e18d531b81572bd02afaac609af
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: VirtualCursor
+  - hash:
+      serializedVersion: 2
+      Hash: 1e87c9ff04054367cc814e8d1b89fb66
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: VideoError
+  - hash:
+      serializedVersion: 2
+      Hash: 25b1c5eacffd494c23582849cd127230
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ContactItemVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.XR.MagicLeap.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MagicLeapLoader
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: LuminUnity.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MLIdentityProfile
+  - hash:
+      serializedVersion: 2
+      Hash: 8f15c253902ff4eef507927669b9dc80
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TextMeshPro
+  - hash:
+      serializedVersion: 2
+      Hash: 1cd7de7521dc2fdca0e4ea3e13c1c8d9
+    assemblyName: UnityEngine.XR.MagicLeap.dll
+    namespaceName: UnityEngine.XR.MagicLeap
+    className: MagicLeapGestures
+  - hash:
+      serializedVersion: 2
+      Hash: 3165968ba45c74472d279ba04455fccb
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_ColorGradient
+  - hash:
+      serializedVersion: 2
+      Hash: 766927ead62c0b6e79e2dae4c158ecec
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MediaPlayerExample
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
+    className: PlayModeRunnerCallback
+  - hash:
+      serializedVersion: 2
+      Hash: b3c4d6d2ec3bf1231fdecd4daaab21da
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MediaPlayerButton
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: BaseInput
+  - hash:
+      serializedVersion: 2
+      Hash: 31208e9308b905de61da66bac9f7ac22
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: UIInputVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: caa533b001ae39b864ba8425019e2268
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Outline
+  - hash:
+      serializedVersion: 2
+      Hash: 01473135d671a71d740e507b04eb93da
+    assemblyName: Unity.XR.ARSubsystems.dll
+    namespaceName: UnityEngine.XR.ARSubsystems
+    className: XRReferenceImageLibrary
+  - hash:
+      serializedVersion: 2
+      Hash: a63fc1a3b035e5a0b5839cd7f7b3086e
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: EventTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: 5dea360fb0b147724ac344e6f399c2f3
+    assemblyName: Unity.TextMeshPro.dll
+    namespaceName: TMPro
+    className: TMP_SubMesh
+  - hash:
+      serializedVersion: 2
+      Hash: c9ca91eecdd8557c7703377e73c7c4e2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: HandMeshingExample
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ContentDragHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestRunner.Utils
+    className: TestRunCallbackListener
+  - hash:
+      serializedVersion: 2
+      Hash: 8ab9295d94483c961936d82d233d3df2
+    assemblyName: Unity.XR.Management.dll
+    namespaceName: UnityEngine.XR.Management
+    className: XRManagerSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 4e5a63ce0840833637ef5ccbddd1d963
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools.TestRunner
+    className: PlaymodeTestsController
+  - hash:
+      serializedVersion: 2
+      Hash: 2aeeec1b1a144c469cd2d37776bc2315
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 43b17e31ca20bf6e17cc55a96df9a424
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: VirtualPointer
+  - hash:
+      serializedVersion: 2
+      Hash: 748dd2a2a28da4e618912da5ac45684b
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: StandaloneInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: ea71c9fc433915ad8c452bab0ff532b7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: UserInterface
+  - hash:
+      serializedVersion: 2
+      Hash: aa88ae22474df55295327e4ee99e5a24
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Toggle
+  - hash:
+      serializedVersion: 2
+      Hash: 8220b46879dc5e37db1b940c938f5744
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: SignalEmitter
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ContentTap
+  - hash:
+      serializedVersion: 2
+      Hash: 7072231382eb3c4871b3dd75ad0227e1
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Slider
+  - hash:
+      serializedVersion: 2
+      Hash: bd1ecead6a3baa9b7a7dd9761370a76d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: ContactAttributeItemVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: cda685c224e3d5df7e3d68e3d3e76f6b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MeshingVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 0fd6822f6177297bd0eb4d83cc7a9030
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: ToggleGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 2826002dd258f7d5945c611f213e8a85
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: MLMediaPlayerCEA708Parser
+  - hash:
+      serializedVersion: 2
+      Hash: 38f77c985750210841fdee13fece061f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap.Core
+    className: MLMovementBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: c3d3430df9e3ea95e3e3d587961390fb
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 5b19fc8f21f89d6bf2db1aecc16ba154
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MagicLeap
+    className: DeepSeaExplorerLauncher
+  platform: 39
+  scenePathNames:
+  - Assets/MagicLeap/Examples/Intermediate/Scenes/ImageTracker.unity
+  playerPath: /Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Builds/Build-test-imageTracker.mpk

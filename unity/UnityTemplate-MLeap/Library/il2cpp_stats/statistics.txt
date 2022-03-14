@@ -1,0 +1,309 @@
+----IL2CPP Arguments----
+--convert-to-cpp --emit-null-checks --enable-stacktrace --enable-array-bounds-check --dotnetprofile=unityaot --compile-cpp --libil2cpp-static --platform=Lumin --architecture=ARM64 --configuration=Release --outputpath=/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Native/libil2cpp.so --cachedirectory=/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Assets/../Library/il2cpp_cache/il2cpp_cache --verbose --enable-stats --stats-output-dir=/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Assets/../Library/il2cpp_stats --profiler-report --map-file-parser=/Applications/Unity/Hub/Editor/2019.4.36f1/Unity.app/Contents/Tools/MapFileParser/MapFileParser --directory=/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed --generatedcppdir=/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/il2cppOutput
+
+----Assemblies Converted-----
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.UnityAnalyticsModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.ARModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/System.Configuration.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.TextRenderingModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.LuminModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.AssetBundleModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/LuminUnity.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.AnimationModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.AudioModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.XRModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/Unity.XR.InteractionSubsystems.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.VFXModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.InputLegacyModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.InputModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/Unity.XR.ARSubsystems.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.DirectorModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/mscorlib.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/Unity.XR.Management.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.Physics2DModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/Unity.Subsystem.Registration.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.UIElementsModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.UIModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.UI.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.GridModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.TerrainModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.VRModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.JSONSerializeModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.SpatialTracking.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/Mono.Security.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/System.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.SharedInternalsModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.ImageConversionModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.TilemapModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.ParticleSystemModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.PhysicsModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.CoreModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.SubsystemsModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/System.Xml.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.UnityWebRequestModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.XR.MagicLeap.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.AndroidJNIModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.AIModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.IMGUIModule.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/System.Core.dll
+	/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Managed/UnityEngine.VideoModule.dll
+
+----- il2cpp Statistics -----
+General:
+	Conversion Time: 20.332 s
+	Files Written: 185
+	String Literals: 5546
+Methods:
+	Total Methods: 33547
+	Non-Generic Methods: 19758
+	Generic Type Methods: 11339
+	Generic Methods: 2450
+	Shared Methods: 13778
+	Methods with Tail Calls : 0
+Metadata:
+	Total: 3,659.11 kb
+	String Literals: 43.33 kb
+	String Literal Data: 208.46 kb
+	Metadata Strings: 447.59 kb
+	Events: 4.97 kb
+	Properties: 69.18 kb
+	Methods: 678.75 kb
+	Parameter Default Values: 1.63 kb
+	Field Default Values: 68.07 kb
+	Field and Parameter Default Values Data: 79.96 kb
+	Field Marshaled Sizes: 11.84 kb
+	Parameters: 279.36 kb
+	Fields: 178.52 kb
+	Generic Parameters: 7.84 kb
+	Generic Parameter Constraints: 0.47 kb
+	Generic Containers: 6.36 kb
+	Nested Types: 5.12 kb
+	Interfaces: 3.99 kb
+	VTables: 150.75 kb
+	Interface Offsets: 31.41 kb
+	Type Definitions: 349.58 kb
+	Images: 1.84 kb
+	Assemblies: 2.94 kb
+	Metadata Usage Lists: 266.38 kb
+	Metadata Usage Pairs: 612.55 kb
+	Field Refs: 0.87 kb
+	Referenced Assemblies: 0.97 kb
+	Attribute Types Ranges: 79.22 kb
+	Attribute Types: 52.28 kb
+	Unresolved Virtual Call Parameter Types: 6.57 kb
+	Unresolved Virtual Call Parameter Ranges: 4.56 kb
+	Windows Runtime type names: 0.00 kb
+	Exported Types: 3.73 kb
+Codegen:
+	NullChecks : 49848
+Hashing:
+	String Literal Hash Collisions : 0
+	Type Hash Collisions : 0
+	Method Hash Collisions : 0
+	Sequence Point Hash Collisions : 0
+Interop:
+	Windows Runtime boxed types : 0
+	Windows Runtime types with names : 0
+	Native to managed interface adapters : 0
+	Array COM callable wrappers : 0
+	COM callable wrappers : 0
+	COM callable wrapper methods that were implemented : 0
+	COM callable wrapper methods that were stripped : 0
+	COM callable wrapper methods that were forwarded to call base class method : 0
+Compilation:
+	Total Files: 219
+	Files Compiled: 27
+	Cache Hits: 192
+	Cache Hit %: 87
+
+
+----Assembly Conversion Times----
+	Convert Assembly-CSharp (577.138977050781ms)
+	Convert LuminUnity (2150.06689453125ms)
+	Convert Mono.Security (31.4270000457764ms)
+	Convert mscorlib (2971.48486328125ms)
+	Convert System (357.447998046875ms)
+	Convert System.Configuration (5.52600002288818ms)
+	Convert System.Core (2.22399997711182ms)
+	Convert System.Xml (18.4990005493164ms)
+	Convert Unity.Subsystem.Registration (4.00999975204468ms)
+	Convert Unity.XR.ARSubsystems (46.2000007629395ms)
+	Convert Unity.XR.InteractionSubsystems (20.644998550415ms)
+	Convert Unity.XR.Management (18.0419998168945ms)
+	Convert UnityEngine (0.439999997615814ms)
+	Convert UnityEngine.AIModule (1.87800002098083ms)
+	Convert UnityEngine.AndroidJNIModule (47.5519981384277ms)
+	Convert UnityEngine.AnimationModule (31.3660011291504ms)
+	Convert UnityEngine.ARModule (1.62800002098083ms)
+	Convert UnityEngine.AssetBundleModule (4.08400011062622ms)
+	Convert UnityEngine.AudioModule (19.5520000457764ms)
+	Convert UnityEngine.CoreModule (348.934020996094ms)
+	Convert UnityEngine.DirectorModule (1.60599994659424ms)
+	Convert UnityEngine.GridModule (0.741999983787537ms)
+	Convert UnityEngine.ImageConversionModule (1.0440000295639ms)
+	Convert UnityEngine.IMGUIModule (81.2610015869141ms)
+	Convert UnityEngine.InputLegacyModule (20.6219997406006ms)
+	Convert UnityEngine.InputModule (3.27600002288818ms)
+	Convert UnityEngine.JSONSerializeModule (3.90200018882751ms)
+	Convert UnityEngine.LuminModule (1.72099995613098ms)
+	Convert UnityEngine.ParticleSystemModule (7.1879997253418ms)
+	Convert UnityEngine.Physics2DModule (13.9029998779297ms)
+	Convert UnityEngine.PhysicsModule (30.5349998474121ms)
+	Convert UnityEngine.SharedInternalsModule (15.7400007247925ms)
+	Convert UnityEngine.SpatialTracking (13.4969997406006ms)
+	Convert UnityEngine.SubsystemsModule (20.7600002288818ms)
+	Convert UnityEngine.TerrainModule (17.7360000610352ms)
+	Convert UnityEngine.TextRenderingModule (14.8159999847412ms)
+	Convert UnityEngine.TilemapModule (7.27199983596802ms)
+	Convert UnityEngine.UI (632.533996582031ms)
+	Convert UnityEngine.UIElementsModule (177.813003540039ms)
+	Convert UnityEngine.UIModule (13.3080005645752ms)
+	Convert UnityEngine.UnityAnalyticsModule (18.2259998321533ms)
+	Convert UnityEngine.UnityWebRequestModule (23.9650001525879ms)
+	Convert UnityEngine.VFXModule (3.61699986457825ms)
+	Convert UnityEngine.VideoModule (7.2790002822876ms)
+	Convert UnityEngine.VRModule (2.32399988174438ms)
+	Convert UnityEngine.XR.MagicLeap (396.569976806641ms)
+	Convert UnityEngine.XRModule (45.8440017700195ms)
+
+----Misc Timing----
+	PreProcessStage: 325.578002929688
+	GenericsCollector.Collect: None
+	WriteGenerics: 5570.41796875
+	AllAssemblyConversion: 8475.99609375
+
+----Generated Files----
+Assembly-CSharp.cpp	1956692
+Assembly-CSharp1.cpp	2030166
+Assembly-CSharp2.cpp	2108029
+Assembly-CSharp3.cpp	2145453
+GenericMethods.cpp	1604550
+GenericMethods1.cpp	2668650
+GenericMethods2.cpp	1931474
+GenericMethods3.cpp	2036521
+GenericMethods4.cpp	1935550
+GenericMethods5.cpp	2017792
+GenericMethods6.cpp	376784
+Generics.cpp	1715948
+Generics1.cpp	1947256
+Generics10.cpp	1421734
+Generics11.cpp	1475344
+Generics12.cpp	1418800
+Generics13.cpp	1444629
+Generics14.cpp	1629841
+Generics15.cpp	2032192
+Generics16.cpp	1423172
+Generics17.cpp	1474316
+Generics18.cpp	1352128
+Generics19.cpp	1507006
+Generics2.cpp	2148295
+Generics20.cpp	1713541
+Generics21.cpp	1627328
+Generics22.cpp	1752672
+Generics23.cpp	1699551
+Generics24.cpp	1842177
+Generics25.cpp	774224
+Generics3.cpp	2128431
+Generics4.cpp	1338509
+Generics5.cpp	1349207
+Generics6.cpp	1733422
+Generics7.cpp	2035568
+Generics8.cpp	1858078
+Generics9.cpp	1716083
+Il2CppAttributes.cpp	7125978
+Il2CppCodeRegistration.cpp	7632
+Il2CppCompilerCalculateTypeValues.cpp	4481385
+Il2CppCompilerCalculateTypeValues1.cpp	5442791
+Il2CppCompilerCalculateTypeValuesTable.cpp	582985
+Il2CppGenericAdjustorThunkTable.cpp	593618
+Il2CppGenericComDefinitions.cpp	193
+Il2CppGenericMethodPointerTable.cpp	3366291
+Il2CppInteropDataTable.cpp	373700
+Il2CppInvokerTable.cpp	4898784
+Il2CppReversePInvokeWrapperTable.cpp	52987
+LuminUnity.cpp	1607493
+LuminUnity1.cpp	1741081
+LuminUnity2.cpp	1843969
+LuminUnity3.cpp	2033415
+LuminUnity4.cpp	1839587
+LuminUnity5.cpp	2143918
+LuminUnity6.cpp	1673055
+LuminUnity7.cpp	1975591
+LuminUnity8.cpp	1853850
+LuminUnity9.cpp	575533
+Mono.Security.cpp	145435
+mscorlib.cpp	2002021
+mscorlib1.cpp	1738946
+mscorlib10.cpp	1832262
+mscorlib11.cpp	2034641
+mscorlib12.cpp	2023037
+mscorlib13.cpp	1764785
+mscorlib14.cpp	1684703
+mscorlib15.cpp	1822410
+mscorlib16.cpp	1957461
+mscorlib17.cpp	1803537
+mscorlib18.cpp	300778
+mscorlib2.cpp	2210606
+mscorlib3.cpp	1968078
+mscorlib4.cpp	1760833
+mscorlib5.cpp	2073381
+mscorlib6.cpp	1921927
+mscorlib7.cpp	1889277
+mscorlib8.cpp	1781651
+mscorlib9.cpp	2204948
+System.Configuration.cpp	55983
+System.Core.cpp	35585
+System.cpp	1760656
+System.Xml.cpp	116724
+System1.cpp	1897644
+System2.cpp	333638
+Unity.Subsystem.Registration.cpp	39382
+Unity.XR.ARSubsystems.cpp	494750
+Unity.XR.InteractionSubsystems.cpp	121382
+Unity.XR.Management.cpp	246414
+UnityEngine.AIModule.cpp	26258
+UnityEngine.AndroidJNIModule.cpp	659392
+UnityEngine.AnimationModule.cpp	276129
+UnityEngine.ARModule.cpp	31078
+UnityEngine.AssetBundleModule.cpp	28747
+UnityEngine.AudioModule.cpp	205666
+UnityEngine.CoreModule.cpp	1781506
+UnityEngine.CoreModule1.cpp	1778535
+UnityEngine.CoreModule2.cpp	1293618
+UnityEngine.cpp	953
+UnityEngine.DirectorModule.cpp	23429
+UnityEngine.GridModule.cpp	5938
+UnityEngine.ImageConversionModule.cpp	12151
+UnityEngine.IMGUIModule.cpp	991446
+UnityEngine.InputLegacyModule.cpp	163819
+UnityEngine.InputModule.cpp	54960
+UnityEngine.JSONSerializeModule.cpp	45307
+UnityEngine.LuminModule.cpp	30860
+UnityEngine.ParticleSystemModule.cpp	82905
+UnityEngine.Physics2DModule.cpp	197936
+UnityEngine.PhysicsModule.cpp	256631
+UnityEngine.SharedInternalsModule.cpp	206111
+UnityEngine.SpatialTracking.cpp	209867
+UnityEngine.SubsystemsModule.cpp	169677
+UnityEngine.TerrainModule.cpp	296169
+UnityEngine.TextRenderingModule.cpp	235303
+UnityEngine.TilemapModule.cpp	112826
+UnityEngine.UI.cpp	2274801
+UnityEngine.UI1.cpp	2462806
+UnityEngine.UI2.cpp	1985970
+UnityEngine.UI3.cpp	943252
+UnityEngine.UIElementsModule.cpp	2509427
+UnityEngine.UIElementsModule1.cpp	484463
+UnityEngine.UIModule.cpp	272121
+UnityEngine.UnityAnalyticsModule.cpp	80680
+UnityEngine.UnityWebRequestModule.cpp	362310
+UnityEngine.VFXModule.cpp	57486
+UnityEngine.VideoModule.cpp	147227
+UnityEngine.VRModule.cpp	44480
+UnityEngine.XR.MagicLeap.cpp	2280772
+UnityEngine.XR.MagicLeap1.cpp	139246
+UnityEngine.XRModule.cpp	642155
+UnresolvedVirtualCallStubs.cpp	595590
+

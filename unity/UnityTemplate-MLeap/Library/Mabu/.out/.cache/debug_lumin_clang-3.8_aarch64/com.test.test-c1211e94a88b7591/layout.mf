@@ -1,0 +1,34 @@
+[
+ {
+  "dest": "bin/libil2cpp.so",
+  "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Native/libil2cpp.so"
+ },
+ {
+  "dest": "bin/AudioPluginMSASpatializer.so",
+  "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Plugins/AudioPluginMSASpatializer.so"
+ },
+ {
+  "dest": "bin/UnityMagicLeap.so",
+  "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Plugins/UnityMagicLeap.so"
+ },
+ {
+  "dest": "bin/libml_bluetoothle_plugin.so",
+  "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Plugins/libml_bluetoothle_plugin.so"
+ },
+ {
+  "dest": "bin/libml_camera_plugin.so",
+  "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Plugins/libml_camera_plugin.so"
+ },
+ {
+  "dest": "bin/libml_mediaplayer_plugin.so",
+  "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Data/Plugins/libml_mediaplayer_plugin.so"
+ },
+ {
+  "dest": "bin/Player.elf",
+  "src": "/Users/abookm1/Dropbox/Mac (2)/Documents/Unity/UnityTemplate-MLeap/Temp/StagingArea/Player.elf"
+ },
+ {
+  "dest": "bin/libc++_shared.so",
+  "src": "/Users/abookm1/MagicLeap/mlsdk/v0.26.0/lumin/stl/libc++/lib/libc++_shared.so"
+ }
+]
