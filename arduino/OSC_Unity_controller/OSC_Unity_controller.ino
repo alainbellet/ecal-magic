@@ -74,10 +74,20 @@ void setup() {
   Serial.println(outIp);
 
   // Start MDNS
-  if (!MDNS.begin("esp32")) {
+  String unique_addr = WiFi.macAddress();
+  
+  unique_addr.replace(":", "");
+  unique_addr = "encoder-"+ unique_addr.substring(0, 3);
+  char mdns[30];
+  unique_addr.toCharArray(mdns, 30);
+  
+  Serial.println(mdns);
+  
+  if (!MDNS.begin(mdns)) {
     Serial.println("Error starting mDNS");
     return;
   }
+  
 }
 
 void led(OSCMessage &msg) {
