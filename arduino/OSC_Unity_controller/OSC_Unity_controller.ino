@@ -16,9 +16,9 @@
 #include <ESPmDNS.h>
 #include "your_secrets.h"
 
-                                            // edit WIFI_SSID + WIFI_PASS constants in the your_secret.h tab (if not present create it)
-char ssid[] = WIFI_SSID;                    // your network SSID (name)
-char pass[] = WIFI_PASS;                    // your network password
+                                            
+char ssid[] = WIFI_SSID;                    // edit WIFI_SSID + WIFI_PASS constants in the your_secret.h tab (if not present create it)
+char pass[] = WIFI_PASS;                    
 
 WiFiUDP Udp;                                // A UDP instance to let us send and receive packets over UDP
 IPAddress outIp(192, 168, 45, 63);          // remote IP of your computer
