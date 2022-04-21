@@ -1,6 +1,9 @@
 # ESP32 Controller
 Sending and receiving control commands via OSC
 
+## To be used with Feather Huzzah 32 (or other esp32 based Boards)
+https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/
+
 ## Require OSC Library
 https://github.com/CNMAT/OSC
 
