@@ -216,7 +216,6 @@ void motorCommand(OSCMessage &msg) {
 
 void sendValues() {
   OSCMessage msg("/unity/state/");
-  //msg.add(getBoardName());
   msg.add(buttonState);
   msg.add(encoderCount);
   Udp.beginPacket(outIp, outPort);
@@ -232,9 +231,9 @@ void updateIp(OSCMessage &msg) { // receive ip,port
   int str_length = msg.getString(0, newIpAndPort, 20);
   String ipAndportString = String(newIpAndPort);
   // split IP and Port
-  int colonPos = ipAndportString.indexOf(",");
+  int colonPos = ipAndportString.indexOf(":");
   String ipString = ipAndportString.substring(0, colonPos);
-  String PortString = ipAndportString.substring(colonPos);
+  String PortString = ipAndportString.substring(colonPos+1, ipAndportString.length());
   
   
   outIp.fromString(ipString);
@@ -243,11 +242,10 @@ void updateIp(OSCMessage &msg) { // receive ip,port
   Serial.print("New remote IP: ");
   Serial.println(outIp);
   Serial.print("New remote Port: ");
-  Serial.println(PortString);
+  Serial.println(outPort);
 
   // answer
   OSCMessage answer("/unity/ipupdated/");
-  //answer.add(getBoardName());
   answer.add(1);
   Udp.beginPacket(outIp, outPort);
   answer.send(Udp);
