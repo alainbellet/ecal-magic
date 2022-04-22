@@ -30,6 +30,7 @@ const unsigned int localPort = 9999;        // local port to listen for OSC pack
 
 OSCErrorCode error;
 
+String boardName; // to be used as identifier and MDNS
 
 /* ------- Define pins ann vars for button + encoder */
 // Button
@@ -42,6 +43,9 @@ const int encoder_pin_1 = 13;
 const int encoder_pin_2 = 15;
 int32_t encoderPrevCount = -9999;
 int32_t encoderCount;
+// Timing
+unsigned long lastUserInteractionMillis = 0;
+int standyDelay = 10  * 60 * 1000; // time in second to wait before standby
 
 /* ------- Adafruit_DRV2605 */
 Adafruit_DRV2605 drv;
@@ -70,6 +74,12 @@ void setup() {
 
 
 void loop() {
+  /* --------- Timing and stanby */
+  if (millis() - lastUserInteractionMillis > standyDelay) {
+    // start deepSleep
+    // esp_sleep_enable_ext0_wakeup(GPIO_NUM_27, 0)
+    // esp_deep_sleep_start()
+  }
   /* --------- SEND OSC MSGS */
   // ENCODER
   // read the state of the Encoder
@@ -99,7 +109,8 @@ void loop() {
       msg.fill(Udp.read());
     }
     if (!msg.hasError()) {
-      msg.dispatch("/arduino/motor", motor);
+      msg.dispatch("/arduino/motor/rt", motorRealtime);
+      msg.dispatch("/arduino/motor/cmd", motorCommand);
       msg.dispatch("/arduino/updateip", updateIp);
     } else {
       error = msg.getError();
@@ -139,11 +150,9 @@ void startWifiAndUdp() {
   Serial.print("Remote IP: ");
   Serial.println(outIp);
   // Start MDNS
-  String unique_addr = WiFi.macAddress();
-  unique_addr.replace(":", "");
-  unique_addr = "encoder" + unique_addr.substring(0, 3);
+  boardName = getBoardName();
   char mdns[30];
-  unique_addr.toCharArray(mdns, 30);
+  boardName.toCharArray(mdns, 30);
   Serial.println(mdns);
 
   WiFi.setHostname(mdns);
@@ -157,13 +166,32 @@ void startWifiAndUdp() {
     }*/
 }
 
-void motor(OSCMessage &msg) {
-  Serial.println("/arduino/motor: ");
+String getBoardName() {
+  String board_name = WiFi.macAddress();
+  board_name.replace(":", "");
+  board_name = "magic" + board_name.substring(0, 3);
+  return board_name;
 }
+
+void motorRealtime(OSCMessage &msg) {
+  int motorValue = msg.getInt(0);
+  Serial.print("/arduino/motor/rt: ");
+  Serial.println(motorValue);
+  double motorInput = (float) motorValue / 100;
+  playHapticRT(motorInput);
+}
+
+void motorCommand(OSCMessage &msg) {
+  int motorCommand = msg.getInt(0);
+  Serial.print("/arduino/motor/cmd: ");
+  Serial.println(motorCommand);
+  playHaptic(motorCommand);
+}
+
 
 void sendValues() {
   OSCMessage msg("/unity/state/");
-  //msg.add(buttonState);
+  msg.add(buttonState);
   msg.add(encoderCount);
   Udp.beginPacket(outIp, outPort);
   msg.send(Udp);
