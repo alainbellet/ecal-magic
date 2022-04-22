@@ -10,6 +10,7 @@
 
 #include <WiFi.h>
 #include <WiFiUdp.h>
+#include <HTTPClient.h>
 #include <OSCMessage.h>
 #include <OSCBundle.h>
 #include <OSCData.h>
@@ -24,9 +25,11 @@ char ssid[] = WIFI_SSID;                    // edit WIFI_SSID + WIFI_PASS consta
 char pass[] = WIFI_PASS;
 
 WiFiUDP Udp;                                // A UDP instance to let us send and receive packets over UDP
-IPAddress outIp(192, 168, 10, 56);          // remote IP of your computer
-const unsigned int outPort = 8888;          // remote port to receive OSC
+IPAddress outIp(192, 168, 45, 28);          // remote IP of your computer
+const unsigned int outPort = 8888;          // remote port to send OSC
 const unsigned int localPort = 9999;        // local port to listen for OSC packets (actually not used for sending)
+
+
 
 OSCErrorCode error;
 
@@ -45,7 +48,7 @@ int32_t encoderPrevCount = -9999;
 int32_t encoderCount;
 // Timing
 unsigned long lastUserInteractionMillis = 0;
-int standyDelay = 10  * 60 * 1000; // time in second to wait before standby
+int standyDelay = 1  * 60 * 1000; // time in second to wait before standby
 
 /* ------- Adafruit_DRV2605 */
 Adafruit_DRV2605 drv;
@@ -77,8 +80,7 @@ void loop() {
   /* --------- Timing and stanby */
   if (millis() - lastUserInteractionMillis > standyDelay) {
     // start deepSleep
-    // esp_sleep_enable_ext0_wakeup(GPIO_NUM_27, 0)
-    // esp_deep_sleep_start()
+    goToSleep();
   }
   /* --------- SEND OSC MSGS */
   // ENCODER
@@ -89,6 +91,7 @@ void loop() {
     sendValues();
     //Serial.println("Encoder count = " + String((int32_t)encoderCount));
     encoderPrevCount = encoderCount;
+    lastUserInteractionMillis = millis(); // reset countdown for deepsleep
   }
 
   // BUTTON
@@ -98,6 +101,7 @@ void loop() {
   if (buttonState != buttonLastState) {
     sendValues();
     buttonLastState = buttonState;
+    lastUserInteractionMillis = millis(); // reset countdown for deepsleep
   }
 
   /* --------- CHECK INCOMMING OSC MSGS */
@@ -129,10 +133,14 @@ void startWifiAndUdp() {
   Serial.print("Connecting to ");
   Serial.println(ssid);
   WiFi.begin(ssid, pass);
-
+  int tryCount = 0;
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
+    if (tryCount > 30) {
+      goToSleep(); // go to sleep in not connected after 15 sec
+    }
+    tryCount++;
   }
   Serial.println("");
 
@@ -160,6 +168,8 @@ void startWifiAndUdp() {
   MDNS.addService("_osc", "_udp", localPort);
   MDNS.addServiceTxt("osc", "udp", "board", "ESP32Board");
 
+  // UPDATE IP TABLE
+  updateIpTable();
   /*if (!MDNS.begin(mdns)) {
     Serial.println("Error starting mDNS");
     return;
@@ -191,7 +201,7 @@ void motorCommand(OSCMessage &msg) {
 
 void sendValues() {
   OSCMessage msg("/unity/state/");
-  msg.add(buttonState);
+  //msg.add(buttonState);
   msg.add(encoderCount);
   Udp.beginPacket(outIp, outPort);
   msg.send(Udp);
@@ -238,4 +248,27 @@ void playHapticRT(double val) { // 0 - 1
   int intV = min(1.0, max(0.0, val)) * 0x7F;
   //Serial.println(intV);
   drv.setRealtimeValue(intV);
+}
+
+void goToSleep() {
+  Serial.println("************* going to sleep, bye! *************");
+  esp_sleep_enable_ext0_wakeup(GPIO_NUM_27, 0);
+  esp_deep_sleep_start();
+}
+
+void updateIpTable() {
+  httpclient.begin("https://ecal-mid.ch/magicleap/ip.php?name=" + getBoardName() + "&ip=" + WiFi.localIP().toString() + "&wifi=" + WIFI_SSID);
+  int httpResponseCode = httpclient.GET();
+  if (httpResponseCode > 0) {
+    //Serial.print("HTTP Response code: ");
+    //Serial.println(httpResponseCode);
+    String payload = httpclient.getString();
+    Serial.println(payload);
+  }
+  else {
+    Serial.print("Error code: ");
+    Serial.println(httpResponseCode);
+  }
+  // Free resources
+  httpclient.end();
 }
