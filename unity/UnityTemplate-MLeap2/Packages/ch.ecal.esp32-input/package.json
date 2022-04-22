@@ -1,0 +1,11 @@
+{
+  "name": "ch.ecal.esp32-input",
+  "displayName": "ESP32 Input",
+  "version": "0.1.0",
+  "unity": "2020.3",
+  "description": "",
+  "keywords": [
+  ],
+  "dependencies": {
+  }
+}
