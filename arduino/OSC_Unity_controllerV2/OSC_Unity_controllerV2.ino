@@ -25,15 +25,16 @@ char ssid[] = WIFI_SSID;                    // edit WIFI_SSID + WIFI_PASS consta
 char pass[] = WIFI_PASS;
 
 WiFiUDP Udp;                                // A UDP instance to let us send and receive packets over UDP
-IPAddress outIp(192, 168, 45, 28);          // remote IP of your computer
-const unsigned int outPort = 8888;          // remote port to send OSC
+IPAddress outIp(192, 168, 0, 0);          // remote IP of your computer
+int outPort = 8888;          // remote port to send OSC
 const unsigned int localPort = 9999;        // local port to listen for OSC packets (actually not used for sending)
-
+bool authorisedIP = false;
 
 
 OSCErrorCode error;
 
 String boardName; // to be used as identifier and MDNS
+float batteryVotage = 0;
 
 /* ------- Define pins ann vars for button + encoder */
 // Button
@@ -48,11 +49,15 @@ int32_t encoderPrevCount = -9999;
 int32_t encoderCount;
 // Timing
 unsigned long lastUserInteractionMillis = 0;
-int standyDelay = 1  * 60 * 1000; // time in second to wait before standby
+int standyDelay = 10  * 60 * 1000; // time in milliseconds to wait before standby
 
 /* ------- Adafruit_DRV2605 */
 Adafruit_DRV2605 drv;
 int8_t motorCurrentMode;
+
+/* Server for IP table update */
+HTTPClient httpclient;
+
 
 void setup() {
   Serial.begin(115200);
@@ -77,6 +82,7 @@ void setup() {
 
 
 void loop() {
+  //batteryVotage = (float(analogRead(A13))/4095)*2*3.3*1.1;
   /* --------- Timing and stanby */
   if (millis() - lastUserInteractionMillis > standyDelay) {
     // start deepSleep
@@ -107,14 +113,23 @@ void loop() {
   /* --------- CHECK INCOMMING OSC MSGS */
   OSCMessage msg;
   int size = Udp.parsePacket();
-
   if (size > 0) {
+    // check if the message come from the same Out IP to avoid multiple connections
+    if (Udp.remoteIP().toString() != outIp.toString()) {
+      Serial.print("NOT allowed senders IP: ");
+      Serial.println(Udp.remoteIP());
+      authorisedIP = false;
+    } else {
+      authorisedIP = true;
+    }
     while (size--) {
       msg.fill(Udp.read());
     }
     if (!msg.hasError()) {
-      msg.dispatch("/arduino/motor/rt", motorRealtime);
-      msg.dispatch("/arduino/motor/cmd", motorCommand);
+      if (authorisedIP) {
+        msg.dispatch("/arduino/motor/rt", motorRealtime);
+        msg.dispatch("/arduino/motor/cmd", motorCommand);
+      }
       msg.dispatch("/arduino/updateip", updateIp);
     } else {
       error = msg.getError();
@@ -201,7 +216,8 @@ void motorCommand(OSCMessage &msg) {
 
 void sendValues() {
   OSCMessage msg("/unity/state/");
-  //msg.add(buttonState);
+  //msg.add(getBoardName());
+  msg.add(buttonState);
   msg.add(encoderCount);
   Udp.beginPacket(outIp, outPort);
   msg.send(Udp);
@@ -211,19 +227,32 @@ void sendValues() {
 
 }
 
-void updateIp(OSCMessage &msg) {
-  char newIp[15];
-  int str_length = msg.getString(0, newIp, 15);
-  String ipString = String(newIp);
-  uint8_t IP_part_1 = ipString.substring(0, 3).toInt();
-  uint8_t IP_part_2 = ipString.substring(4, 7).toInt();
-  uint8_t IP_part_3 = ipString.substring(8, 10).toInt();
-  uint8_t IP_part_4 = ipString.substring(11, 13).toInt();
-
-  outIp[IP_part_1, IP_part_2, IP_part_3, IP_part_4];
-
+void updateIp(OSCMessage &msg) { // receive ip,port
+  char newIpAndPort[20];
+  int str_length = msg.getString(0, newIpAndPort, 20);
+  String ipAndportString = String(newIpAndPort);
+  // split IP and Port
+  int colonPos = ipAndportString.indexOf(",");
+  String ipString = ipAndportString.substring(0, colonPos);
+  String PortString = ipAndportString.substring(colonPos);
+  
+  
+  outIp.fromString(ipString);
+  outPort = PortString.toInt();
+  
   Serial.print("New remote IP: ");
   Serial.println(outIp);
+  Serial.print("New remote Port: ");
+  Serial.println(PortString);
+
+  // answer
+  OSCMessage answer("/unity/ipupdated/");
+  //answer.add(getBoardName());
+  answer.add(1);
+  Udp.beginPacket(outIp, outPort);
+  answer.send(Udp);
+  Udp.endPacket();
+  answer.empty();
 }
 
 void setMode(uint8_t mode) {
