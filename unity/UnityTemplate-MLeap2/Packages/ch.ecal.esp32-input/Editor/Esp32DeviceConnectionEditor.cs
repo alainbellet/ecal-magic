@@ -18,13 +18,14 @@ public class Esp32DeviceConnectionEditor : Editor
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        var oscEsp32Manager = (target as Esp32DeviceConnection);
+        var espTarget = (target as Esp32DeviceConnection);
         
-        EditorGUILayout.LabelField("Local IP",oscEsp32Manager.serverAddress);
+        EditorGUILayout.LabelField("Local IP",espTarget.serverAddress);
+        EditorGUILayout.LabelField("Server Port",espTarget.serverPort.ToString());
 
 
         var state = "";
-        var isActive = oscEsp32Manager.timeSinceLastEvent >= 0;
+        var isActive = espTarget.timeSinceLastEvent >= 0;
         var color = Color.white;
         if (isActive)
         {
@@ -36,6 +37,8 @@ public class Esp32DeviceConnectionEditor : Editor
             color = new Color(1f, .0f, .0f);
             state = "not connected";
         }
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("","Connection",EditorStyles.boldLabel);
 
         GUILayout.BeginHorizontal();
         EditorGUILayout.PrefixLabel("State");
@@ -47,7 +50,7 @@ public class Esp32DeviceConnectionEditor : Editor
         
         GUILayout.BeginHorizontal();
         EditorGUILayout.PrefixLabel("Time since last event");
-        EditorGUILayout.LabelField(oscEsp32Manager.timeSinceLastEvent >= 0 ? $"{oscEsp32Manager.timeSinceLastEvent:0.0}s" : "no events received");
+        EditorGUILayout.LabelField(espTarget.timeSinceLastEvent >= 0 ? $"{espTarget.timeSinceLastEvent:0.0}s" : "no events received");
         GUILayout.EndHorizontal();
             
 
@@ -55,19 +58,19 @@ public class Esp32DeviceConnectionEditor : Editor
         EditorGUILayout.PrefixLabel(" ");
         if (GUILayout.Button("Connect"))
         {
-            oscEsp32Manager.gameObject.SetActive(false);
-            oscEsp32Manager.gameObject.SetActive(true);
-            oscEsp32Manager.SendIpNow();
+            espTarget.gameObject.SetActive(false);
+            espTarget.gameObject.SetActive(true);
+            espTarget.SendIpNow();
         }
 
         GUILayout.EndHorizontal();
         
-        EditorGUILayout.Space();
+        EditorGUILayout.Separator();
         EditorGUILayout.LabelField("","Debug ",EditorStyles.largeLabel);
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("","Input",EditorStyles.boldLabel);
-        EditorGUILayout.LabelField("Button:",oscEsp32Manager.currentState.button ? "down" : "up",EditorStyles.boldLabel);
-        EditorGUILayout.LabelField("Encoder Value:",oscEsp32Manager.currentState.encoder.ToString(),EditorStyles.boldLabel);
+        EditorGUILayout.LabelField("Button:",espTarget.currentState.button ? "down" : "up",EditorStyles.boldLabel);
+        EditorGUILayout.LabelField("Encoder Value:",espTarget.currentState.encoder.ToString(),EditorStyles.boldLabel);
         EditorGUILayout.Space();
 
         EditorGUILayout.LabelField("","Output",EditorStyles.boldLabel);
@@ -77,7 +80,7 @@ public class Esp32DeviceConnectionEditor : Editor
         EditorGUILayout.PrefixLabel(" ");
         if (GUILayout.Button("Send Haptic Event"))
         {
-            oscEsp32Manager.inputDevice.SendHapticEvent(hapticEvent);
+            espTarget.inputDevice.SendHapticEvent(hapticEvent);
         }
  
         GUILayout.EndHorizontal();
@@ -86,7 +89,7 @@ public class Esp32DeviceConnectionEditor : Editor
        
        if(Math.Abs(motorSpeed - newMotorSpeed) > 0.00001f)
        {
-           oscEsp32Manager.inputDevice.SendMotorSpeed(motorSpeed);
+           espTarget.inputDevice.SendMotorSpeed(motorSpeed);
            motorSpeed = newMotorSpeed;
        }
            
@@ -94,11 +97,15 @@ public class Esp32DeviceConnectionEditor : Editor
         EditorGUILayout.PrefixLabel(" ");
         if (GUILayout.Button("Stop Motor"))
         {
-            oscEsp32Manager.inputDevice.SendMotorSpeed(0);
+            espTarget.inputDevice.SendMotorSpeed(0);
             motorSpeed = 0;
         }
 
         GUILayout.EndHorizontal();
+        
+        EditorGUILayout.Separator();
+        EditorGUILayout.LabelField("Input System ",EditorStyles.boldLabel);
+        EditorGUILayout.LabelField("Device Path", espTarget.inputDevice != null ? espTarget.inputDevice.name : "(no device)",EditorStyles.boldLabel);
         
         UnityEditor.EditorApplication.QueuePlayerLoopUpdate();
     }

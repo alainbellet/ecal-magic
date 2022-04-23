@@ -13,18 +13,21 @@ using UnityEngine.InputSystem.LowLevel;
 [ExecuteAlways]
 public class Esp32DeviceConnection : MonoBehaviour
 {
-    
+    [Header("Client")]
     public string clientAddress = "192.168.45.30";
     public int clientPort = 9999;
 
+    [Header("Server")]
+    public int serverMinPort = 8880;
+    public int serverMaxPort = 8899;
     public string serverAddress { get; private set; }
-    public int serverPort = 8888;
-
+    public int serverPort { get; private set; }
+    
     OscServer _server; // IN
     OscClient _client; // OUT
 
     Queue<Esp32DeviceState> dataQueue = new Queue<Esp32DeviceState>();
- 
+
     public float timeSinceLastEvent { get; private set; } = -1;
     public float timeSinceLastIpSend { get; private set; } = 999;
 
@@ -34,10 +37,29 @@ public class Esp32DeviceConnection : MonoBehaviour
 
     public Esp32Device inputDevice { get; private set; }
 
+    private bool firstEncoderValueReceived;
+    private float zeroEncoderValue;
+
     void OnEnable()
     {
         // IN
-        _server = new OscServer(serverPort); // Port number
+        serverPort = serverMinPort;
+        while (serverPort < serverMaxPort)
+        {
+            try
+            {
+                _server = new OscServer(serverPort); // Port number
+                break;
+            }
+            catch
+            {
+            }
+            serverPort++;
+        }
+
+        if (_server == null)
+            throw new UnityException($"No free server port found in range {serverMinPort}-{serverMaxPort}");
+
         _server.MessageDispatcher.AddCallback("/unity/state/", OnDataReceiveState);
         _server.MessageDispatcher.AddCallback("/unity/ipupdated/", OnDataReceiveIp);
 
@@ -47,34 +69,52 @@ public class Esp32DeviceConnection : MonoBehaviour
         // start update ip loop
         serverAddress = GetLocalAddress();
 
-        initialized = true;
-
         inputDevice = InputSystem.AddDevice(new InputDeviceDescription
         {
             interfaceName = "ESP32",
-            product = "Custom",
-            serial = $"{clientAddress}:{clientPort}->{serverPort}"
+            product = "Input Thing",
+            version = "1",
+            deviceClass = "box",
+            manufacturer = "ecal",
+            capabilities = "encoder,button,motor",
+            serial = $"{clientAddress}:{clientPort}@{serverPort}",
         }) as Esp32Device;
+        InputSystem.EnableDevice(inputDevice);
 
         AddCommandListener();
+
+        initialized = true;
     }
 
 
     void OnDisable()
     {
-        InputSystem.RemoveDevice(inputDevice);
+        serverPort = -1;
+        
+        if (inputDevice != null)
+        {
+            InputSystem.RemoveDevice(inputDevice);
+            inputDevice = null;
+        }
 
-        _server.Dispose();
-        _server = null;
+        if (_server != null)
+        {
+            _server.Dispose();
+            _server = null;
+        }
 
-        _client.Dispose();
-        _client = null;
+        if (_client != null)
+        {
+            _client.Dispose();
+            _client = null;
+        }
 
         initialized = false;
-        
+
+        firstEncoderValueReceived = false;
         RemoveCommandListener();
     }
-    
+
 
     void Update()
     {
@@ -106,10 +146,18 @@ public class Esp32DeviceConnection : MonoBehaviour
 
     void OnDataReceiveState(string address, OscDataHandle data)
     {
+        
         var state = new Esp32DeviceState();
         state.button = data.GetElementAsInt(0) == 0; // 0 = pressed, 1 = released
         state.encoder = data.GetElementAsInt(1) / 4095f;
+        
+        if (!firstEncoderValueReceived)
+        {
+            zeroEncoderValue = state.encoder;
+            firstEncoderValueReceived = true;
+        }
 
+        state.encoder -= zeroEncoderValue;
 
         lock (dataQueue)
         {
@@ -118,15 +166,17 @@ public class Esp32DeviceConnection : MonoBehaviour
 
         timeSinceLastEvent = 0;
     }
-    
+
     unsafe void AddCommandListener()
     {
         InputSystem.onDeviceCommand += OnDeviceCommand;
     }
+
     unsafe void RemoveCommandListener()
     {
         InputSystem.onDeviceCommand -= OnDeviceCommand;
     }
+
     private unsafe long? OnDeviceCommand(InputDevice commandDevice, InputDeviceCommand* command)
     {
         if (commandDevice == inputDevice)
@@ -136,10 +186,11 @@ public class Esp32DeviceConnection : MonoBehaviour
                 var cmd = (Esp32HapticEventCommand*)command;
                 _client.Send("/arduino/motor/cmd", cmd->eventId);
             }
+
             if (command->type == Esp32HapticRealtimeCommand.Type)
             {
                 var cmd = (Esp32HapticRealtimeCommand*)command;
-                _client.Send("/arduino/motor/rt",  Mathf.RoundToInt(cmd->speed * 100));
+                _client.Send("/arduino/motor/rt", Mathf.RoundToInt(cmd->speed * 100));
             }
         }
 

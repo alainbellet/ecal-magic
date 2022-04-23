@@ -2,24 +2,16 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.InputSystem.Layouts;
+using UnityEngine.InputSystem.LowLevel;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-
-// The input system stores a chunk of memory for each device. What that
-// memory looks like we can determine ourselves. The easiest way is to just describe
-// it as a struct.
-//
-// Each chunk of memory is tagged with a "format" identifier in the form
-// of a "FourCC" (a 32-bit code comprised of four characters). Using
-// IInputStateTypeInfo we allow the system to get to the FourCC specific
-// to our struct. 
 
 #if UNITY_EDITOR
 [InitializeOnLoad] // Call static class constructor in editor.
 #endif
 [InputControlLayout(stateType = typeof(Esp32DeviceState))]
-public class Esp32Device : InputDevice
+public class Esp32Device : InputDevice//, IInputStateCallbackReceiver
 {
     
 #if UNITY_EDITOR
@@ -43,12 +35,37 @@ public class Esp32Device : InputDevice
     protected override void FinishSetup()
     {
         base.FinishSetup();
-            
         
         encoder = GetChildControl<AxisControl>("encoder");
         button = GetChildControl<ButtonControl>("button");
+
+    }
+/*
+    protected new void OnNextUpdate()
+    {
+      //  InputState.Change(encoder, 0f);
     }
 
+    protected new unsafe void OnStateEvent(InputEventPtr eventPtr)
+    {
+       // encoder.AccumulateValueInEvent(currentStatePtr, eventPtr);
+      // InputState.Change(this, eventPtr);
+    }
+
+    void IInputStateCallbackReceiver.OnNextUpdate()
+    {
+        OnNextUpdate();
+    }
+
+    void IInputStateCallbackReceiver.OnStateEvent(InputEventPtr eventPtr)
+    {
+        OnStateEvent(eventPtr);
+    }
+
+    bool IInputStateCallbackReceiver.GetStateOffsetForEvent(InputControl control, InputEventPtr eventPtr, ref uint offset)
+    {
+        return false;
+    }*/
 
     public void SendMotorSpeed(float speed)
     {

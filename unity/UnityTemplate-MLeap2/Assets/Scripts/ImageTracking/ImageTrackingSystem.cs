@@ -20,6 +20,7 @@ public class ImageTrackingSystem : MonoBehaviour
     private Dictionary<string, GameObject> objects = new Dictionary<string, GameObject>();
     public List<ImageTargetInfo> imageTargetInfos = new List<ImageTargetInfo>();
     public List<MLImageTracker.Target> imageTargets = new List<MLImageTracker.Target>();
+    private Dictionary<string, MLImageTracker.Target.Result> trackingState = new Dictionary<string, MLImageTracker.Target.Result>();
 
     bool trackingActive = true;
 
@@ -199,23 +200,25 @@ public class ImageTrackingSystem : MonoBehaviour
 
     private void OnTrackedObjectUpdate(MLImageTracker.Target imageTarget, MLImageTracker.Target.Result imageTargetResult)
     {
-
         var trackingId = imageTarget.TargetSettings.Name;
         if (imageTargetResult.Status == MLImageTracker.Target.TrackingStatus.Tracked)
         {
-            if (!objects.ContainsKey(trackingId))
+            if (prefab)
             {
-                Debug.Log($"started tracking {trackingId}");
-                var newObj = Instantiate(prefab);
-                newObj.name = $"Tracked Object: {trackingId}";
-                objects.Add(trackingId, newObj);
+                if (!objects.ContainsKey(trackingId))
+                {
+                    var newObj = Instantiate(prefab);
+                    newObj.name = $"Tracked Object: {trackingId}";
+                    objects.Add(trackingId, newObj);
+                }
+
+                var trackedImageObject = objects[trackingId].GetComponent<TrackedImageObject>();
+
+                trackedImageObject.imageTrackingSystem = this;
+                trackedImageObject.trackingId = trackingId;
             }
 
-            var trackedImageObject = objects[trackingId].GetComponent<TrackedImageObject>();
-
-            trackedImageObject.imageTrackingSystem = this;
-            trackedImageObject.trackingId = trackingId;
-            trackedImageObject.trackingState = imageTargetResult;
+            trackingState[trackingId] = imageTargetResult;
         }
     }
 
@@ -228,5 +231,17 @@ public class ImageTrackingSystem : MonoBehaviour
         }
 
         return null;
+    }
+
+    public bool HasTrackingState(string trackingId)
+    {
+        return trackingState.ContainsKey(trackingId);
+    }
+    public MLImageTracker.Target.Result GetTrackingState(string trackingId)
+    {
+        if (!HasTrackingState(trackingId))
+            throw new UnityException($"No Tracking state for tracking id '{trackingId}' found");
+        
+        return trackingState[trackingId];
     }
 }

@@ -8,7 +8,8 @@ public class TrackedImageObjectTransform : MonoBehaviour
 
     void Update()
     {
-        var trackingState = GetComponent<TrackedImageObject>().trackingState;
+        var trackedImageObject = GetComponent<TrackedImageObject>();
+        var trackingState = trackedImageObject.GetTrackingStateOrDefault();
         // If tracked, update position / rotation and move following object to that position / rotation
         switch (trackingState.Status)
         {
