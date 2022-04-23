@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: ML-Tracker-Test
+  companyName: ecal
+  productName: MagicExample
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -138,8 +138,8 @@ PlayerSettings:
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 3e5997f674288409c82042a6a83c4cef, type: 2}
   - {fileID: 11400000, guid: abb87f8e0b1da40c98564d40c976d57b, type: 2}
+  - {fileID: 11400000, guid: 3e5997f674288409c82042a6a83c4cef, type: 2}
   - {fileID: -9168337679180905243, guid: bbef5efb28e644c5088a3191a021e2cd, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
