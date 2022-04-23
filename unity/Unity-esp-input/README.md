@@ -1,6 +1,0 @@
-- AR Sample
-- Enable Magic Leap in XR (ZI and build)
-- Enable preview packages
-- Install Magic Leap XR Plugin 6.4.2-preview.2 (https://forum.unity.com/threads/magicleap-xr-plugin-not-working-with-new-inputsystem.1166924/)
-- Install support libraries
-- Set signing key in project settings
