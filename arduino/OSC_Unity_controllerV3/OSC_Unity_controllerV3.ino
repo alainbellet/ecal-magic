@@ -19,6 +19,7 @@
 #include <Wire.h>
 #include "Adafruit_DRV2605.h"
 #include <ESP32Encoder.h>
+#include <Preferences.h>
 
 int firmware = 30;
 
@@ -33,6 +34,7 @@ bool authorisedIP = false;
 
 
 OSCErrorCode error;
+Preferences preferences; // to save persistent data (board name)
 
 String boardName; // to be used as identifier and MDNS
 float batteryVotage = 0;
@@ -68,6 +70,8 @@ void setup() {
   Serial.begin(115200);
   delay(1000);
   Serial.println("");
+  preferences.begin("device", false);
+  //setBoardName(1);
   // DRV2605
   Serial.println("Starting DRV2605");
   if (drv.begin()) {
@@ -168,6 +172,7 @@ void loop() {
         msg.dispatch("/arduino/keepalive", inKeepAlive);
       }
       // pass trough access to allow update of outgoing Port and IP
+      msg.dispatch("/arduino/setname", inSetName);
       msg.dispatch("/arduino/updateip", inUpdateIp);
     } else {
       error = msg.getError();
@@ -258,6 +263,10 @@ void inRestartESP(OSCMessage &msg) { // no value needed
   restartESP();
 }
 
+void inSetName(OSCMessage &msg) { // int (will be used a unique identifier number)
+  setBoardName(msg.getInt(0));
+}
+
 
 /* --------- OTHER FUNCTIONS ------------ */
 
@@ -304,10 +313,16 @@ void startWifiAndUdp() {
   MDNS.addServiceTxt("osc", "udp", "board", "ESP32Board");
 }
 
+void setBoardName(int nbr){
+  preferences.putInt("name", nbr);
+}
+
 String getBoardName() {
-  String board_name = WiFi.macAddress();
-  board_name.replace(":", "");
-  board_name = "magic" + board_name.substring(0, 7);
+  int nbr = preferences.getInt("name", 0);
+  String board_name = "controller"+String(nbr);
+  //String board_name = WiFi.macAddress();
+  //board_name.replace(":", "");
+  //board_name = "magic" + board_name.substring(0, 7);
   return board_name;
 }
 
