@@ -111,11 +111,14 @@ void loop() {
     // start deepSleep
     goToSleep();
   }
-  /* --------- Send battery and other info every minutes */
+  /* --------- Send battery and other info every minutes and check wifi connection */
   if (millis() - lastInfoSentMillis > 60 * 1000) {
     // send info
     outSendInfo();
     lastInfoSentMillis = millis();
+    if (WiFi.status() != WL_CONNECTED){
+      
+    }
   }
   /* --------- SEND OSC MSGS */
   // ENCODER
@@ -199,10 +202,12 @@ void outSendValues() { // in button, encoder
 
 void outSendInfo() {
   OSCMessage msg("/unity/info/");
-  msg.add("x");
+  char brd_name[12];
+  getBoardName().toCharArray(brd_name, 12);
+  msg.add(brd_name);
   msg.add(firmware);
   msg.add(getBatteryLevel());
-  msg.add(hasMotor);
+  msg.add(int(hasMotor));
   Udp.beginPacket(outIp, outPort);
   msg.send(Udp);
   Udp.endPacket();
@@ -246,12 +251,13 @@ void inUpdateIp(OSCMessage &msg) { // string value "ip:port"
   Serial.println(outPort);
 
   // answer
-  OSCMessage answer("/unity/ipupdated/");
+  outSendInfo();
+  /*OSCMessage answer("/unity/ipupdated/");
   answer.add(1);
   Udp.beginPacket(outIp, outPort);
   answer.send(Udp);
   Udp.endPacket();
-  answer.empty();
+  answer.empty();*/
 }
 
 void inKeepAlive(OSCMessage &msg) { // int minutes of delay before sleep, send 0 if no change
