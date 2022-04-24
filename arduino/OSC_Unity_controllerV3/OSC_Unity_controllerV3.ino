@@ -3,7 +3,7 @@
   Controller for Unity
   Communication via OSC
 
-  V2 AB/ECAL 2022
+  V3 AB/ECAL 2022
 
 
   --------------------------------------------------------------------------------------------- */
@@ -20,14 +20,15 @@
 #include "Adafruit_DRV2605.h"
 #include <ESP32Encoder.h>
 
+int firmware = 30;
 
 char ssid[] = WIFI_SSID;                    // edit WIFI_SSID + WIFI_PASS constants in the your_secret.h tab (if not present create it)
 char pass[] = WIFI_PASS;
 
 WiFiUDP Udp;                                // A UDP instance to let us send and receive packets over UDP
-IPAddress outIp(192, 168, 0, 0);          // remote IP of your computer
-int outPort = 8888;          // remote port to send OSC
-const unsigned int localPort = 9999;        // local port to listen for OSC packets (actually not used for sending)
+IPAddress outIp(192, 168, 10, 56);          // remote IP of your computer
+int outPort = 8888;                         // remote port to send OSC
+const unsigned int localPort = 9999;        // local port to listen for OSC packets
 bool authorisedIP = false;
 
 
@@ -41,6 +42,8 @@ float batteryVotage = 0;
 const int buttonPin = 27;
 int buttonState = 0;
 int buttonLastState = -1;
+unsigned long lastButtonUpMillis = -1;
+
 // Encoder
 ESP32Encoder encoder;
 const int encoder_pin_1 = 13;
@@ -49,11 +52,13 @@ int32_t encoderPrevCount = -9999;
 int32_t encoderCount;
 // Timing
 unsigned long lastUserInteractionMillis = 0;
-int standyDelay = 10  * 60 * 1000; // time in milliseconds to wait before standby
+int sleepDelayInMillis = 1  * 60 * 1000; // time in milliseconds to wait before standby
+unsigned long lastInfoSentMillis = 0;
 
 /* ------- Adafruit_DRV2605 */
 Adafruit_DRV2605 drv;
 int8_t motorCurrentMode;
+bool hasMotor = false;
 
 /* Server for IP table update */
 HTTPClient httpclient;
@@ -65,10 +70,18 @@ void setup() {
   Serial.println("");
   // DRV2605
   Serial.println("Starting DRV2605");
-  drv.begin();
-  drv.selectLibrary(1);
-  drv.useERM(); // ERM or LRA
-  playHapticRT(0.0); // Stop the motor in case it hang running
+  if (drv.begin()) {
+    hasMotor = true;
+    Serial.println("has DRV2065");
+  } else {
+    hasMotor = false;
+    Serial.println("no DRV2065");
+  }
+  if ( hasMotor == true) {
+    drv.selectLibrary(1);
+    drv.useERM(); // ERM or LRA
+    playHapticRT(0.0); // Stop the motor in case it hang running
+  }
   // BUTTON
   pinMode(buttonPin, INPUT_PULLUP);
   // ENCODER
@@ -78,15 +91,27 @@ void setup() {
   encoder.setCount(0); // reset the counter
   // Start Wifi and UDP
   startWifiAndUdp();
+  // Publish to IP table (online)
+  updateIpTable();
+  // sleep after 10 minutes if no user activity or osc call on arduino/keepalive
+  keepAlive(10);
+  // send info
+  outSendInfo();
 }
 
 
 void loop() {
-  //batteryVotage = (float(analogRead(A13))/4095)*2*3.3*1.1;
-  /* --------- Timing and stanby */
-  if (millis() - lastUserInteractionMillis > standyDelay) {
+
+  /* --------- Timing and sleep */
+  if (millis() - lastUserInteractionMillis > sleepDelayInMillis) {
     // start deepSleep
     goToSleep();
+  }
+  /* --------- Send battery and other info every minutes */
+  if (millis() - lastInfoSentMillis > 60 * 1000) {
+    // send info
+    outSendInfo();
+    lastInfoSentMillis = millis();
   }
   /* --------- SEND OSC MSGS */
   // ENCODER
@@ -94,10 +119,10 @@ void loop() {
   encoderCount = encoder.getCount();
 
   if (encoderCount != encoderPrevCount) {
-    sendValues();
+    outSendValues();
     //Serial.println("Encoder count = " + String((int32_t)encoderCount));
     encoderPrevCount = encoderCount;
-    lastUserInteractionMillis = millis(); // reset countdown for deepsleep
+    keepAlive(0); // reset countdown for deepsleep
   }
 
   // BUTTON
@@ -105,9 +130,17 @@ void loop() {
   buttonState = digitalRead(buttonPin);
 
   if (buttonState != buttonLastState) {
-    sendValues();
+    outSendValues();
     buttonLastState = buttonState;
-    lastUserInteractionMillis = millis(); // reset countdown for deepsleep
+    keepAlive(0); // reset countdown for deepsleep
+  }
+  // Check for long press (used to restart board)
+  if (buttonState == 0) {
+    if (millis() - lastButtonUpMillis > 5000) { // if long press 5s
+      restartESP();
+    }
+  } else {
+    lastButtonUpMillis = millis();
   }
 
   /* --------- CHECK INCOMMING OSC MSGS */
@@ -120,17 +153,22 @@ void loop() {
       Serial.println(Udp.remoteIP());
       authorisedIP = false;
     } else {
+      Serial.println("allowed senders IP ");
       authorisedIP = true;
     }
     while (size--) {
       msg.fill(Udp.read());
     }
     if (!msg.hasError()) {
-      if (authorisedIP) {
-        msg.dispatch("/arduino/motor/rt", motorRealtime);
-        msg.dispatch("/arduino/motor/cmd", motorCommand);
+      if (authorisedIP == true) {
+        // access only if authorised IP
+        msg.dispatch("/arduino/motor/rt", inMotorRealtime);
+        msg.dispatch("/arduino/motor/cmd", inMotorCommand);
+        msg.dispatch("/arduino/restart", inRestartESP);
+        msg.dispatch("/arduino/keepalive", inKeepAlive);
       }
-      msg.dispatch("/arduino/updateip", updateIp);
+      // pass trough access to allow update of outgoing Port and IP
+      msg.dispatch("/arduino/updateip", inUpdateIp);
     } else {
       error = msg.getError();
       Serial.print("error: ");
@@ -139,7 +177,89 @@ void loop() {
   }
 }
 
-/* --------- FUNCTIONS */
+/* --------- FUNCTIONS ------------ */
+
+
+/* --------- OUTGOING OSC COMMANDS FUNCTIONS ------------ */
+void outSendValues() { // in button, encoder
+  OSCMessage msg("/unity/state/");
+  msg.add(buttonState);
+  msg.add(encoderCount);
+  Udp.beginPacket(outIp, outPort);
+  msg.send(Udp);
+  Udp.endPacket();
+  msg.empty();
+  delay (10);
+}
+
+void outSendInfo() {
+  OSCMessage msg("/unity/info/");
+  msg.add("x");
+  msg.add(firmware);
+  msg.add(getBatteryLevel());
+  msg.add(hasMotor);
+  Udp.beginPacket(outIp, outPort);
+  msg.send(Udp);
+  Udp.endPacket();
+  msg.empty();
+  delay (10);
+}
+
+/* --------- INCOMMING OSC COMMANDS FUNCTIONS ------------ */
+
+void inMotorRealtime(OSCMessage &msg) { // int value 0-100
+  int motorValue = msg.getInt(0);
+  Serial.print("/arduino/motor/rt: ");
+  Serial.println(motorValue);
+  double motorInput = (float) motorValue / 100;
+  playHapticRT(motorInput);
+}
+
+void inMotorCommand(OSCMessage &msg) { // int value 0-117
+  int motorCommand = msg.getInt(0);
+  Serial.print("/arduino/motor/cmd: ");
+  Serial.println(motorCommand);
+  playHaptic(motorCommand);
+}
+
+void inUpdateIp(OSCMessage &msg) { // string value "ip:port"
+  char newIpAndPort[20];
+  int str_length = msg.getString(0, newIpAndPort, 20);
+  String ipAndportString = String(newIpAndPort);
+  // split IP and Port
+  int colonPos = ipAndportString.indexOf(":");
+  String ipString = ipAndportString.substring(0, colonPos);
+  String PortString = ipAndportString.substring(colonPos + 1, ipAndportString.length());
+
+
+  outIp.fromString(ipString);
+  outPort = PortString.toInt();
+
+  Serial.print("New remote IP: ");
+  Serial.println(outIp);
+  Serial.print("New remote Port: ");
+  Serial.println(outPort);
+
+  // answer
+  OSCMessage answer("/unity/ipupdated/");
+  answer.add(1);
+  Udp.beginPacket(outIp, outPort);
+  answer.send(Udp);
+  Udp.endPacket();
+  answer.empty();
+}
+
+void inKeepAlive(OSCMessage &msg) { // int minutes of delay before sleep, send 0 if no change
+  int sleepDelay = msg.getInt(0);
+  keepAlive(sleepDelay);
+}
+
+void inRestartESP(OSCMessage &msg) { // no value needed
+  restartESP();
+}
+
+
+/* --------- OTHER FUNCTIONS ------------ */
 
 void startWifiAndUdp() {
   // Connect to WiFi network
@@ -182,76 +302,24 @@ void startWifiAndUdp() {
   MDNS.begin(mdns);
   MDNS.addService("_osc", "_udp", localPort);
   MDNS.addServiceTxt("osc", "udp", "board", "ESP32Board");
-
-  // UPDATE IP TABLE
-  updateIpTable();
-  /*if (!MDNS.begin(mdns)) {
-    Serial.println("Error starting mDNS");
-    return;
-    }*/
 }
 
 String getBoardName() {
   String board_name = WiFi.macAddress();
   board_name.replace(":", "");
-  board_name = "magic" + board_name.substring(0, 3);
+  board_name = "magic" + board_name.substring(0, 7);
   return board_name;
 }
 
-void motorRealtime(OSCMessage &msg) {
-  int motorValue = msg.getInt(0);
-  Serial.print("/arduino/motor/rt: ");
-  Serial.println(motorValue);
-  double motorInput = (float) motorValue / 100;
-  playHapticRT(motorInput);
+float getBatteryLevel() {
+  // Reference voltage on ESP32 is 1.1V
+  // https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/adc.html#adc-calibration
+  // See also: https://bit.ly/2zFzfMT
+  int rawValue = analogRead(A13);
+  float voltageLevel = (rawValue / 4096.0) * 2 * 1.1 * 3.3; // calculate voltage level
+  return (voltageLevel);
 }
 
-void motorCommand(OSCMessage &msg) {
-  int motorCommand = msg.getInt(0);
-  Serial.print("/arduino/motor/cmd: ");
-  Serial.println(motorCommand);
-  playHaptic(motorCommand);
-}
-
-
-void sendValues() {
-  OSCMessage msg("/unity/state/");
-  msg.add(buttonState);
-  msg.add(encoderCount);
-  Udp.beginPacket(outIp, outPort);
-  msg.send(Udp);
-  Udp.endPacket();
-  msg.empty();
-  delay (10);
-
-}
-
-void updateIp(OSCMessage &msg) { // receive ip,port
-  char newIpAndPort[20];
-  int str_length = msg.getString(0, newIpAndPort, 20);
-  String ipAndportString = String(newIpAndPort);
-  // split IP and Port
-  int colonPos = ipAndportString.indexOf(":");
-  String ipString = ipAndportString.substring(0, colonPos);
-  String PortString = ipAndportString.substring(colonPos+1, ipAndportString.length());
-  
-  
-  outIp.fromString(ipString);
-  outPort = PortString.toInt();
-  
-  Serial.print("New remote IP: ");
-  Serial.println(outIp);
-  Serial.print("New remote Port: ");
-  Serial.println(outPort);
-
-  // answer
-  OSCMessage answer("/unity/ipupdated/");
-  answer.add(1);
-  Udp.beginPacket(outIp, outPort);
-  answer.send(Udp);
-  Udp.endPacket();
-  answer.empty();
-}
 
 void setMode(uint8_t mode) {
   if (mode == motorCurrentMode) {
@@ -277,14 +345,27 @@ void playHapticRT(double val) { // 0 - 1
   drv.setRealtimeValue(intV);
 }
 
+void keepAlive(int sleepdelay) { // send value in minutes, if 0 no update of active value
+  if (sleepdelay > 0) {
+    sleepDelayInMillis = sleepdelay * 60 * 1000;
+    Serial.println("");
+    Serial.println("New sleep delay: " + String(sleepdelay));
+  }
+  lastUserInteractionMillis = millis(); // reset countdown for deepsleep
+}
+
 void goToSleep() {
+  if (getBatteryLevel() > 4.2) { // fully charged or plugged to a charger so no need to sleep
+    keepAlive(0);
+    return;
+  }
   Serial.println("************* going to sleep, bye! *************");
   esp_sleep_enable_ext0_wakeup(GPIO_NUM_27, 0);
   esp_deep_sleep_start();
 }
 
 void updateIpTable() {
-  httpclient.begin("https://ecal-mid.ch/magicleap/ip.php?name=" + getBoardName() + "&ip=" + WiFi.localIP().toString() + "&wifi=" + WIFI_SSID);
+  httpclient.begin("https://ecal-mid.ch/magicleap/update.php?name=" + getBoardName() + "&ip=" + WiFi.localIP().toString() + "&wifi=" + WIFI_SSID + "&battery=" + getBatteryLevel() + "&motor=" + hasMotor + "&firmware=" + firmware);
   int httpResponseCode = httpclient.GET();
   if (httpResponseCode > 0) {
     //Serial.print("HTTP Response code: ");
@@ -298,4 +379,9 @@ void updateIpTable() {
   }
   // Free resources
   httpclient.end();
+}
+
+void restartESP() {
+  Serial.print("Restarting now");
+  ESP.restart();
 }
